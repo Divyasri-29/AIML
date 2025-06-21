@@ -1,0 +1,334 @@
+
+ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING:
+---------------------------------------------------
+DATA:-
+-------
+The informtaion about the particular instance
+
+TASK:-
+------
+To perform a task first we need to find business problem and the data.
+1)independent features ---necessary factors to find the target feature.
+2)Target variable/features or dependent features --->what to predict.
+
+TYPES OF DATA:-
+---------------
+1)Supervised data -->when both independent feature and target feature is known.
+2)Unsupervised data-->when the target is not known,then we need to group the data of independent features.
+3)Rienforcement/Semi-supervised-->when only some data is known from both independent feature and target feature.
+
+MACHINE LEARNING:-
+------------------
+In the name itself what machine learns.That means learning(gaining knowledge) from the past experiences and predicting the future instances known as machine learning.It is a branch of artificial intelligence.
+
+- In excel,text cases we use ML because it requires small memory.
+
+DEEP LEARNING:
+----------------
+It is the core component of artificial intelligence.That means it will learn the data thoroughly until pin point result is occured.
+
+- In the case of images and audio we use DL because it will require large amount of memory.
+- In DL there are four terminologies
+  - CNN -->Conversational neural network --->Realted to images      (supervised)
+  - RNN -->Recurring neural network --->Related to audio,video,language (supervised)
+  - CV(open cv)  -->some of the cnn techniques will be there
+  - NLP -->Natural language processing-->Related to text
+
+ARTIFICIAL INTELLIGENCE:
+------------------------
+It will take the algorithm from the machine learning and some related technologies together form a artificial intelligence.
+
+TASK:-
+------
+- Data and Business problem are required to perform a task.
+
+ALGORITHM TO PERFORM A TASK:
+------------------------------
+  1)Data collection
+  2)Data understanding
+  3)Data visualization
+  4)Data pre-processing --> making raw data set into proper format
+  5)Model building
+  6)Model evaluation -->applying tuning techniques
+  7)Result
+1,2,3,4 steps-->Data Analysis
+5,6,7 steps--->Machine learning
+DA + ML -->Data science
+
+PACKAGES:-
+------------
+1)numpy - numerical python 
+2)matplotlib - Visualization
+3)pandas -
+4)SKlearn-
+
+Business problems:
+--------------------
+3 types:-
+-------------
+1)classification -- if your target feature is of categeries(true/false,pass/fail).
+2)Regression --- if target feature is continuous numbers.
+3)Cluster -- if the data set is unsupervised(grouping of data).
+
+K nearest neighbour (KNN):
+----------------------------
+- If there is a binary classification(either true or false) consider k as odd(avoid 2 multiplants).
+- If there is a three way classification(either true or false) avoid 3 multiplants.
+Advantage:
+---------------
+It is wide box algorithm.It can be perform on any data set.
+
+Disadvantage:
+---------------
+- finding optimised(best) k value.
+- time complexity
+
+HAMMING DISTANCES::
+-------------------
+Hamming Distance measures the similarity between two strings of the same length. The Hamming Distance between two strings of the same length is the number of positions at which the corresponding characters are different.
+* "karolin" and "kathrin" is 3.
+* "karolin" and "kerstin" is 3.
+* "kathrin" and "kerstin" is 4.
+*  0000 and 1111 is 4.
+*  2173896 and 2233796 is 3.
+
+Levenshtein distance::
+----------------------
+ two words is the minimum number of single-character edits (insertions, deletions or substitutions) required to change one word into the other.
+For example, the Levenshtein distance between "kitten" and "sitting" is 3, since the following 3 edits change one into the other, and there is no way to do it with fewer than 3 edits:
+
+* kitten → sitten (substitution of "s" for "k"),
+* sitten → sittin (substitution of "i" for "e"),
+* sittin → sitting (insertion of "g" at the end).
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+How to create a file and perform file handling:-
+-------------------------------------------------
+1)create a folder in the desktop.
+2)open idle and then open new page.
+3)now write the piece of code.
+ like-->
+a=open(r'C:\Users\Divyasri\Desktop\file\sample.txt','x')
+a.close()
+4)now save it and run the file now it will create a txt document and .py file in the folder itself.
+------------------------------------------------------------------------------------------------------------------1)a=open(r'C:\Users\Divyasri\Desktop\file\sample.txt','w')
+a.write('Divya Sri\n')
+a.write('Asritha\n')
+a.write('Swathi\n')
+2)a=open(r'C:\Users\Divyasri\Desktop\file\sample.txt','w')
+s=['Divya Sri\n','Asritha\n','Swathi\n','Sravya\n','Sowjanya\n','Aishwarya']
+a.writelines(s)
+a.close()
+3)a=open(r'C:\Users\Divyasri\Desktop\file\sample.txt','a')
+s=['Divya Sri\n','Asritha\n','Swathi\n','Sravya\n','Sowjanya\n','Aishwarya']
+a.write("\nhello guys!..")
+a.close()
+4)a=open(r'C:\Users\Divyasri\Desktop\file\sample.txt','r')
+s=a.read()
+print(s)
+a.close()
+5)a=open(r'C:\Users\Divyasri\Desktop\file\sample.txt','r')
+s=a.readlines()
+for i in s:
+    print(i)
+a.close()
+6)a=open(r'C:\Users\Divyasri\Desktop\file\data.csv','r')
+s=a.readlines()
+d=[]
+for i in s:
+    d.append(i.split(','))
+a.close()
+c=0
+for i in d:
+    if i[3]=='CSE':
+        c+=1
+print(c)
+7)a=open(r'C:\Users\Divyasri\Desktop\file\data.csv','r')
+s=a.readlines()
+d=[]
+for i in s:
+    d.append(i.split(','))
+a.close()
+c=0
+c1=0
+c2=0
+c3=0
+for i in d:
+    if i[3]=='CSE':
+        c+=1
+    elif i[3]=='AIML':
+        c1+=1
+    elif i[3]=='DS':
+        c2+=1
+    elif i[3]=='IT':
+        c3+=1
+print(c)
+print(c1)
+print(c2)
+print(c3)
+     (OR)
+a=open(r'C:\Users\Divyasri\Desktop\file\data.csv','r')
+s=a.readlines()
+d=[]
+for i in s:
+    d.append(i.split(','))
+a.close()
+c=0
+x={}
+for i in d[1:]:
+    if i[3] not in x:
+        x[i[3]]=1
+    else:
+        x[i[3]]+=1
+print(x)
+8)cnt=0
+for i in d[1:]:
+    if 'aec' in i[2]:
+        cnt+=1
+print(cnt)
+9)q={}
+for i in d[1:]:
+    f=i[2].index('@')
+    if i[2][f+1: ] not in q:
+        q[i[2][f+1: ]]=1
+    else:
+        q[i[2][f+1: ]]+=1
+print(q)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+PANDAS:-
+----------
+- A ML cannot accept empty spaces.
+- A ML cannot accept string data.
+import pandas as pd
+data=pd.read_csv(r'C:\Users\Divyasri\Desktop\file\Movie-Data.csv')
+print(data['Year'].value_counts())
+2016    297
+2015    127
+2014     98
+2013     91
+2012     64
+2011     63
+2010     60
+2007     53
+2008     52
+2009     51
+2006     44
+Name: Year, dtype: int64
+-----------------------------------------------------------------------------------------------
+dataframe-it will have a header.
+matrix- 
+--> if you are reading by using excel or csv file,by default it will take as dataframe.
+SOME COMMANDS TO KNOW ABOUT OUR DATASET:-
+------------------------------------------
+.shape --> it will give no of rows and coloumns
+.size ---> it will give total number of elements
+.ndim ---> it will give the dimension.
+.head() --> it will print first five lines(rows).
+.tail() --> it will print last five lines.
+.columns --> it will display first line(header).
+.max() --> it will give the max
+.sum() --> it will give sum
+.mean() --> it will give average
+.describe() --> it will give complete imformation about the data
+.value_counts --> it will give the count of unique elements(elements and the apperances).
+.isna().sum() --> it will display count of empty space in each row.
+.dropna() --> it will delete empty spaces(by default it will delete rows).
+.inplace=True--> make the changes in the data itself
+- axis=1 --> means it will arise the empty spaces by the columns-wise order.
+- axis=0 --> it is by default that means the empty spaces will be arise by the row-wise order.
+- .iloc -->integer location
+- .iloc[0:2,0:4] ---> it will display row from 0 to 2 and it will display columns from 0 index to 4th index.
+---------------------------------------------------
+TERMS:-
+---------
+- mean
+- mode
+- median
+- standard deviation
+- variants
+---------------------------------------------------------------------------------------------------
+CLASSIFICATION(it has only accuracy no errors):-
+-----------------
+K nearest neighbour (KNN):
+----------------------------
+- If there is a binary classification(either true or false) consider k as odd(avoid 2 multiplants).
+- If there is a three way classification(either true or false) avoid 3 multiplants.
+Advantage:
+---------------
+It is wide box algorithm.It can be perform on any data set.
+
+Disadvantage:
+---------------
+- finding optimised(best) k value.
+- time complexity
+
+--------------------------------------------------------------------------------------------------
+LINEAR REGRESSION(it has only errors no accuracy):-
+--------------------
+Main aim in simple regression is to draw a straight line.
+-first step is assumption that means assume the data in a linear dataset.
+1.plot the points and draw a straight line which satisy max points or near to the points.
+2.from that straight line find slope and intercept.
+3.then apply the formula y=mx+c to find the target feature.
+
+-----------
+UNIT:-2
+------------
+PROBLEM SOLVING AGENT:-
+-----------------------
+1) problem defining
+2) Analysing
+3) knowledge representation.
+4) problem solving cost/path to cost.
+-------
+STEPS:
+-------
+1)initial state
+2)action,Transition state
+3)goal state.
+
+EXAMPLE:-
+---------
+waterjug problem:-
+--------------------
+1) problem defining:- given two empty jugs(like a and b) in which we need to fill the water.The caapcity of jug 'a' is 3 and capacity of jug 'b' is 5.
+2) Analyzing:- we need to fill one jug with 4 litres of water by shifting water from one jug to another.
+3) knowledge representation:- there are two cases.first one is based on jug 'a'- if 'a' is completely filled, empty the jug an performing some actions we reach our goal.second one is based on 'b'- if 'b' is completely filled, empty the jug an performing some actions we reach our goal
+4)problem solving cost:- based on 'a' we require 8 steps to reach our goal.based on 'b' we reuire 7 steps to reach our goal.
+------------------------------------------------------------------------------------------------------------------
+DECISION TREE:-
+----------------
+
+climate
+location
+population
+pollution
+temperature
+season
+
+salary
+cost of living
+type of place
+position
+type of work
+
+find-s :- specific to general
+candidate elimination :- general to specific
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
